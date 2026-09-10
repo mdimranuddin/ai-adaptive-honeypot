@@ -2,6 +2,9 @@
 
 A working proof-of-concept system that deploys a decoy SSH server (honeypot), captures real attacker interactions, and uses an AI model to classify attack behaviour and predict likely next actions — with full explainability and an auditable evidence trail.
 
+## 🔗 Live Dashboard Demo
+[View Live Site](https://mdimranuddin.github.io/ai-adaptive-honeypot/dashboard.html) — real analyzed sessions and AI predictions
+
 ## What it does
 
 1. **Honeypot** — [Cowrie](https://github.com/cowrie/cowrie) runs in Docker, emulating a realistic Linux SSH server to attract and log attacker activity.
