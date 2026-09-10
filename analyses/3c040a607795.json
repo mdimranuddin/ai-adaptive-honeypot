@@ -1,0 +1,25 @@
+{
+  "session_id": "3c040a607795",
+  "src_ip": "172.17.0.1",
+  "commands": [
+    "whoami",
+    "ls",
+    "uname -a",
+    "exit"
+  ],
+  "raw_ai_response": "{\"prediction_available\":true,\"risk_level\":\"Low\",\"current_stage\":\"Discovery\",\"predicted_next_action\":\"Attempt to download and execute a malicious payload or perform privilege escalation\",\"confidence\":70,\"reasoning\":[\"Commands indicate basic system discovery (whoami, ls, uname -a).\",\"No evidence of credential access or file transfer.\",\"Typical attacker progression moves from discovery to acquiring tools or escalating privileges.\",\"Given the limited activity, the next logical step would be to attempt to gain deeper access or download a tool.\"],\"prediction_note\":\"Prediction is based on common ATT&CK progression from Discovery to Credential Access or Execution.\"}",
+  "parsed_analysis": {
+    "prediction_available": true,
+    "risk_level": "Low",
+    "current_stage": "Discovery",
+    "predicted_next_action": "Attempt to download and execute a malicious payload or perform privilege escalation",
+    "confidence": 70,
+    "reasoning": [
+      "Commands indicate basic system discovery (whoami, ls, uname -a).",
+      "No evidence of credential access or file transfer.",
+      "Typical attacker progression moves from discovery to acquiring tools or escalating privileges.",
+      "Given the limited activity, the next logical step would be to attempt to gain deeper access or download a tool."
+    ],
+    "prediction_note": "Prediction is based on common ATT&CK progression from Discovery to Credential Access or Execution."
+  }
+}

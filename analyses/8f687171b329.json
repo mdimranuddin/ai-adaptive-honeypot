@@ -1,0 +1,23 @@
+{
+  "session_id": "8f687171b329",
+  "src_ip": "172.17.0.1",
+  "commands": [
+    "exit"
+  ],
+  "raw_ai_response": "{\"prediction_available\":false,\"risk_level\":\"Low\",\"current_stage\":\"Reconnaissance\",\"predicted_next_action\":null,\"confidence\":80,\"reasoning\":[\"The session only contained the command 'exit' with no file downloads or further interaction.\",\"No evidence of reconnaissance, discovery, credential access, or tool transfer beyond the initial connection.\",\"Given the lack of activity, the attacker did not perform any meaningful actions, so we classify the stage at most as Reconnaissance (initial probing).\",\"Risk is assessed as Low due to no malicious activity observed.\",\"Since there is no substantive behavior, we set prediction_available to false and cannot reliably predict next actions.\"],\"prediction_note\":null}",
+  "parsed_analysis": {
+    "prediction_available": false,
+    "risk_level": "Low",
+    "current_stage": "Reconnaissance",
+    "predicted_next_action": null,
+    "confidence": 80,
+    "reasoning": [
+      "The session only contained the command 'exit' with no file downloads or further interaction.",
+      "No evidence of reconnaissance, discovery, credential access, or tool transfer beyond the initial connection.",
+      "Given the lack of activity, the attacker did not perform any meaningful actions, so we classify the stage at most as Reconnaissance (initial probing).",
+      "Risk is assessed as Low due to no malicious activity observed.",
+      "Since there is no substantive behavior, we set prediction_available to false and cannot reliably predict next actions."
+    ],
+    "prediction_note": null
+  }
+}

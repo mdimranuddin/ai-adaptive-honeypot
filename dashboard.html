@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Honeypot Attacker Analysis Dashboard</title>
+<meta charset="UTF-8">
+<style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        margin: 0; padding: 40px 20px; min-height: 100vh; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .header { background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        border-radius: 16px; padding: 32px; color: white; margin-bottom: 24px;
+        box-shadow: 0 10px 30px rgba(99,102,241,0.3); }
+    .header h1 { margin: 0 0 8px 0; font-size: 26px; }
+    .header .status { display:flex; justify-content:space-between; align-items:center; margin-top:12px; }
+    .header .badge-monitoring { background:rgba(255,255,255,0.2); padding:4px 14px; border-radius:20px; font-size:13px; }
+    .header p { margin: 0; opacity: 0.9; font-size: 14px; }
+    .stats { display: flex; gap: 16px; margin-bottom: 24px; }
+    .stat-box { flex: 1; background: white; border-radius: 12px; padding: 20px;
+        text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .stat-box .num { font-size: 32px; font-weight: bold; }
+    .stat-box .label { color: #64748b; font-size: 13px; margin-top: 4px; }
+    .card { background: white; border-radius: 14px; padding: 24px; margin-bottom: 18px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .card-header h3 { margin: 0; font-size: 18px; color: #1e293b; }
+    .meta { color: #64748b; font-size: 13px; margin: 6px 0 0 0; }
+    .badge { color: white; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+    .analysis { padding: 16px; border-radius: 8px; border-left: 4px solid; font-size: 14px; line-height: 1.6; color: #334155; }
+    .confidence-row { display:flex; align-items:center; gap:6px; margin-top:10px; font-weight:600; }
+    .info-icon { cursor:help; color:#94a3b8; font-size:13px; }
+    .confidence-bar-bg { background:#e2e8f0; border-radius:6px; height:8px; margin:6px 0 14px 0; overflow:hidden; }
+    .confidence-bar-fill { height:100%; border-radius:6px; }
+    .reasoning-label { font-weight:600; margin:12px 0 4px 0; }
+    .reasoning-list { margin:0; padding-left:20px; }
+    .reasoning-list li { margin-bottom:4px; }
+    .unavailable { font-style:italic; color:#64748b; }
+    .timestamp { text-align: center; color: #94a3b8; font-size: 13px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🍯 Honeypot Attacker Analysis Dashboard</h1>
+        <p>SSH Honeypot — AI-assisted behaviour analysis and next-action prediction</p>
+        <div class="status">
+            <span class="badge-monitoring">● MONITORING</span>
+            <span style="font-size:13px;">Last updated: September 10, 2026 at 08:12 AM</span>
+        </div>
+    </div>
+    <div class="stats">
+        <div class="stat-box"><div class="num" style="color:#ef4444">1</div><div class="label">High Risk</div></div>
+        <div class="stat-box"><div class="num" style="color:#f59e0b">0</div><div class="label">Medium Risk</div></div>
+        <div class="stat-box"><div class="num" style="color:#22c55e">4</div><div class="label">Low Risk</div></div>
+        <div class="stat-box"><div class="num" style="color:#6366f1">5</div><div class="label">Total Sessions</div></div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <div><h3>Session 9530b0da43ec</h3>
+            <p class="meta">Source IP: 172.17.0.1 &nbsp;•&nbsp; 11 commands run &nbsp;•&nbsp; Stage: Ingress Tool Transfer</p></div>
+            <span class="badge" style="background:#ef4444">High Risk</span>
+        </div>
+        <div class="analysis" style="border-left-color:#ef4444; background:#fef2f2">
+            
+        <p><strong>Predicted Next Action:</strong> Execute the downloaded malware (e.g., chmod +x malware.sh && ./malware.sh)</p>
+        <div class="confidence-row">
+            <span>Confidence: 85%</span>
+            <span class="info-icon" title="AI-generated estimate, not a statistically calibrated probability">ⓘ</span>
+        </div>
+        <div class="confidence-bar-bg">
+            <div class="confidence-bar-fill" style="width:85%; background:#ef4444"></div>
+        </div>
+        <p class="reasoning-label">Why this prediction?</p>
+        <ul class="reasoning-list">
+        <li>Attacker performed system identification (whoami, id, uname -a)</li><li>Collected files and network info (cat /etc/passwd, cat /etc/shadow, ifconfig, ps aux)</li><li>Downloaded a script from external server using wget</li><li>Downloading a payload indicates transition to Ingress Tool Transfer stage</li><li>Credential files accessed show credential access intent</li><li>The most advanced observed behavior is the transfer of a malicious script</li></ul>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <div><h3>Session 3c040a607795</h3>
+            <p class="meta">Source IP: 172.17.0.1 &nbsp;•&nbsp; 4 commands run &nbsp;•&nbsp; Stage: Discovery</p></div>
+            <span class="badge" style="background:#22c55e">Low Risk</span>
+        </div>
+        <div class="analysis" style="border-left-color:#22c55e; background:#f0fdf4">
+            
+        <p><strong>Predicted Next Action:</strong> Attempt to download and execute a malicious payload or perform privilege escalation</p>
+        <div class="confidence-row">
+            <span>Confidence: 70%</span>
+            <span class="info-icon" title="AI-generated estimate, not a statistically calibrated probability">ⓘ</span>
+        </div>
+        <div class="confidence-bar-bg">
+            <div class="confidence-bar-fill" style="width:70%; background:#22c55e"></div>
+        </div>
+        <p class="reasoning-label">Why this prediction?</p>
+        <ul class="reasoning-list">
+        <li>Commands indicate basic system discovery (whoami, ls, uname -a).</li><li>No evidence of credential access or file transfer.</li><li>Typical attacker progression moves from discovery to acquiring tools or escalating privileges.</li><li>Given the limited activity, the next logical step would be to attempt to gain deeper access or download a tool.</li></ul>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <div><h3>Session a26da88441e3</h3>
+            <p class="meta">Source IP: 172.17.0.1 &nbsp;•&nbsp; 1 commands run &nbsp;•&nbsp; Stage: Initial Access</p></div>
+            <span class="badge" style="background:#22c55e">Low Risk</span>
+        </div>
+        <div class="analysis" style="border-left-color:#22c55e; background:#f0fdf4">
+            <p class="unavailable">Prediction unavailable — Not enough activity in this session to predict a next action.</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <div><h3>Session 127716f49598</h3>
+            <p class="meta">Source IP: 172.17.0.1 &nbsp;•&nbsp; 1 commands run &nbsp;•&nbsp; Stage: Initial Access</p></div>
+            <span class="badge" style="background:#22c55e">Low Risk</span>
+        </div>
+        <div class="analysis" style="border-left-color:#22c55e; background:#f0fdf4">
+            <p class="unavailable">Prediction unavailable — Not enough activity in this session to predict a next action.</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <div><h3>Session 8f687171b329</h3>
+            <p class="meta">Source IP: 172.17.0.1 &nbsp;•&nbsp; 1 commands run &nbsp;•&nbsp; Stage: Reconnaissance</p></div>
+            <span class="badge" style="background:#22c55e">Low Risk</span>
+        </div>
+        <div class="analysis" style="border-left-color:#22c55e; background:#f0fdf4">
+            <p class="unavailable">Prediction unavailable — Not enough activity in this session to predict a next action.</p>
+        </div>
+    </div>
+    
+    <p class="timestamp">Confidence values are AI-generated estimates, not statistically calibrated probabilities.</p>
+</div>
+</body>
+</html>

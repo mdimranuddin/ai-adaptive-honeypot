@@ -1,0 +1,22 @@
+{
+  "session_id": "127716f49598",
+  "src_ip": "172.17.0.1",
+  "commands": [
+    "exit"
+  ],
+  "raw_ai_response": "{\"prediction_available\":false,\"risk_level\":\"Low\",\"current_stage\":\"Initial Access\",\"predicted_next_action\":null,\"confidence\":null,\"reasoning\":[\"The only command observed was 'exit', indicating the attacker terminated the session without performing any actions.\",\"No files were downloaded, no commands for discovery, credential dumping, or tool transfer were executed.\",\"Thus the session shows no meaningful activity beyond the initial access.\",\"Given the lack of activity, there is insufficient basis to predict future behavior, so prediction_available is set to false.\"],\"prediction_note\":null}",
+  "parsed_analysis": {
+    "prediction_available": false,
+    "risk_level": "Low",
+    "current_stage": "Initial Access",
+    "predicted_next_action": null,
+    "confidence": null,
+    "reasoning": [
+      "The only command observed was 'exit', indicating the attacker terminated the session without performing any actions.",
+      "No files were downloaded, no commands for discovery, credential dumping, or tool transfer were executed.",
+      "Thus the session shows no meaningful activity beyond the initial access.",
+      "Given the lack of activity, there is insufficient basis to predict future behavior, so prediction_available is set to false."
+    ],
+    "prediction_note": null
+  }
+}

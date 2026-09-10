@@ -1,0 +1,22 @@
+{
+  "session_id": "a26da88441e3",
+  "src_ip": "172.17.0.1",
+  "commands": [
+    "exit"
+  ],
+  "raw_ai_response": "{\"prediction_available\":false,\"risk_level\":\"Low\",\"current_stage\":\"Initial Access\",\"predicted_next_action\":null,\"confidence\":null,\"reasoning\":[\"The session contained only the \\\"exit\\\" command and no further activity.\",\"No files were downloaded or commands executed that indicate deeper stages such as Discovery or Credential Access.\",\"Thus the attacker only achieved Initial Access and terminated the session.\",\"With no observable behavior, there is insufficient data to predict future actions, so prediction_available is set to false.\"],\"prediction_note\":null}",
+  "parsed_analysis": {
+    "prediction_available": false,
+    "risk_level": "Low",
+    "current_stage": "Initial Access",
+    "predicted_next_action": null,
+    "confidence": null,
+    "reasoning": [
+      "The session contained only the \"exit\" command and no further activity.",
+      "No files were downloaded or commands executed that indicate deeper stages such as Discovery or Credential Access.",
+      "Thus the attacker only achieved Initial Access and terminated the session.",
+      "With no observable behavior, there is insufficient data to predict future actions, so prediction_available is set to false."
+    ],
+    "prediction_note": null
+  }
+}

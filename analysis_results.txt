@@ -1,0 +1,49 @@
+============================================================
+Session: 3c040a607795
+Source IP: 172.17.0.1
+Commands run: 4
+------------------------------------------------------------
+Risk Level: Low
+Current Stage: Discovery
+Predicted Next Action: Attempt to download and execute a malicious payload or perform privilege escalation
+Confidence: 70%
+Reasoning:
+  - Commands indicate basic system discovery (whoami, ls, uname -a).
+  - No evidence of credential access or file transfer.
+  - Typical attacker progression moves from discovery to acquiring tools or escalating privileges.
+  - Given the limited activity, the next logical step would be to attempt to gain deeper access or download a tool.
+
+============================================================
+Session: a26da88441e3
+Source IP: 172.17.0.1
+Commands run: 1
+------------------------------------------------------------
+Risk Level: Low
+Current Stage: Initial Access
+Prediction unavailable: Not enough activity in this session to predict a next action.
+
+============================================================
+Session: 127716f49598
+Source IP: 172.17.0.1
+Commands run: 1
+------------------------------------------------------------
+Risk Level: Low
+Current Stage: Initial Access
+Prediction unavailable: Not enough activity in this session to predict a next action.
+
+============================================================
+Session: 9530b0da43ec
+Source IP: 172.17.0.1
+Commands run: 11
+------------------------------------------------------------
+Risk Level: High
+Current Stage: Ingress Tool Transfer
+Predicted Next Action: Execute the downloaded malware (e.g., chmod +x malware.sh && ./malware.sh)
+Confidence: 85%
+Reasoning:
+  - Attacker performed system identification (whoami, id, uname -a)
+  - Collected files and network info (cat /etc/passwd, cat /etc/shadow, ifconfig, ps aux)
+  - Downloaded a script from external server using wget
+  - Downloading a payload indicates transition to Ingress Tool Transfer stage
+  - Credential files accessed show credential access intent
+  - The most advanced observed behavior is the transfer of a malicious script
