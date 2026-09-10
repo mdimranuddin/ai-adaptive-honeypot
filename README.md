@@ -18,22 +18,23 @@ A working proof-of-concept system that deploys a decoy SSH server (honeypot), ca
 
 ## Architecture
 
+```
 Internet Attacker
-↓
+      ↓
 SSH Honeypot (Cowrie, Docker)
-↓
+      ↓
 Structured JSON Logs
-↓
+      ↓
 Log Parser (Python)
-↓
+      ↓
 AI Model (Groq, strict JSON schema)
-↓
+      ↓
 Validation (Pydantic)
-↓
+      ↓
 Saved Results + Raw Response (audit trail)
-↓
+      ↓
 Dashboard (HTML)
-
+```
 
 ## Tech stack
 
@@ -68,13 +69,14 @@ A real captured session (commands included `whoami`, `cat /etc/shadow`, `wget [p
 
 ## Project structure
 
-├── analyze_session.py # Parses logs, sends sessions to AI, validates + saves results
-├── run_pipeline.py # One-command automation: logs → AI → dashboard
-├── make_dashboard.py # Builds the HTML dashboard
-├── parse_logs.py # Standalone log parsing utility
-├── analyses/ # Per-session AI audit trail (raw + parsed responses)
-└── dashboard.html # Generated visual report
-
+```
+├── analyze_session.py   # Parses logs, sends sessions to AI, validates + saves results
+├── run_pipeline.py       # One-command automation: logs → AI → dashboard
+├── make_dashboard.py     # Builds the HTML dashboard
+├── parse_logs.py         # Standalone log parsing utility
+├── analyses/              # Per-session AI audit trail (raw + parsed responses)
+└── dashboard.html         # Generated visual report
+```
 
 ## Known limitations / Future work
 
