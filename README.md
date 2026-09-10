@@ -94,6 +94,4 @@ This project only analyzes activity on infrastructure the author owns and contro
 
 ## License
 
-## License
-
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
