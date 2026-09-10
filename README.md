@@ -94,4 +94,6 @@ This project only analyzes activity on infrastructure the author owns and contro
 
 ## License
 
-This project is for educational and research purposes.
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
